@@ -1,21 +1,21 @@
  // Assignment Code
    var generateBtn = document.querySelector("#generate");
-
+// declaring arrays which contain lowercase, uppercase, numbers, and symbols.
   var passwordLowerCase = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
   var passwordUpperCase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
   var passwordNumbers  = ['0','1','2','3','4','5','6','7','8','9'];
   var passwordSymbols = ['`','~','!','@','#','$','%','^','&','*','(',')', '-', '_', '=', '+', '[', ']', '{', '}', '|', ';', ':', '"', ',', '<', '.', '>', '/', '?']
 
-
+// declaring variables for passwordlength, symbols, numbers, uppercase, and lowercase.
   var passwordLength = "";
   var symbols;
   var numbers;
   var upperCase;
   var lowerCase;
-
+// creating function GENERATE PASSWORD.
   function generatePassword(){
     var passwordLength = (prompt("How many characters would you like to have in your password?"));
-
+// asking for how many characters user want in password.
     if (passwordLength <= 8 || passwordLength >= 128){
          alert("Your password must between 8 and 128 characters.");
          var passwordLength = (prompt("How many characters would you like to have in your password?"))
@@ -25,7 +25,7 @@
     var numbers = confirm("Do you want any numbers in your password");
     var lowerCase = confirm("Do you want any lowercase in your password?");
     var upperCase = confirm("do you want any uppercase in your password?");
-
+// if everything entered false it will ask all the questions again.
     if (symbols === false && numbers === false && lowerCase === false && upperCase === false){
       prompt("You must choose atleast one out of all");
       var symbols =prompt("Do you want any characters in your password?");
@@ -33,10 +33,11 @@
       var lowerCase = prompt("Do you want any lowercase in your password?");
       var upperCase = prompt("do you want any uppercase in your password?");
     }
+    // good till here
     var passwordCharacters = []
 
-    if (symbols){
-      passwordCharacters = passwordCharacters.concat(passwordSymbols)
+    if (symbols === true && numbers === true && lowerCase === true && upperCase === true){
+      passwordCharacters = symbols.concat(numbers, lowerCase, upperCase)
     }
     if (numbers){
       passwordCharacters = passwordCharacters.concat(passwordNumbers)
