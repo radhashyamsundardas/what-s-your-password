@@ -13,7 +13,7 @@ var passwordChoice = {
   passwordLowerCase : ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'],
   passwordUpperCase : ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'],
   passwordNumbers  : ['0','1','2','3','4','5','6','7','8','9'],
-  passwordSymbols : ['`','~','!','@','#','$','%','^','&','*','(',')', '-', '_', '=', '+', '[', ']', '{', '}', '|', ';', ':', '"', ',', '<', '.', '>', '/', '?']
+  passwordCharacters : ['`','~','!','@','#','$','%','^','&','*','(',')', '-', '_', '=', '+', '[', ']', '{', '}', '|', ';', ':', '"', ',', '<', '.', '>', '/', '?']
 }
 
 
@@ -42,15 +42,12 @@ function generatePassword(){
   passwordChoice.passwordlength = 0;
 
   if (passwordLength < 8 || passwordLength > 128){
-    passwordLength =prompt("Your password must be more than 8 and less than 128 numbers!");
-    passwordSymbols =prompt("Do you want any characters in your password")
-    passwordLowercase = prompt("do you want any lowercase in your password")
-    password
-
-  
-  }
-  
-
+    passwordLength =prompt("Your password must between 8 and 128 numbers!");
+    passwordcharacters =prompt("Do you want any characters in your password?");
+    passwordLowercase = prompt("Do you want any lowercase in your password?");
+    passwordUppercase = prompt("do you want any uppercase in your password?");
+    passwordNumbers = prompt("Do you want any numbers in your password")
+}
 }
 console.log(generatePassword);
 
