@@ -24,19 +24,39 @@
 
     var symbols =prompt("Do you want any characters in your password?");
     var numbers = prompt("Do you want any numbers in your password")
-    var lowercase = prompt("Do you want any lowercase in your password?");
-    var uppercase = prompt("do you want any uppercase in your password?");
+    var lowerCase = prompt("Do you want any lowercase in your password?");
+    var upperCase = prompt("do you want any uppercase in your password?");
 
-    if (symbols === false && numbers === false && lowercase === false && uppercase === false){
+    if (symbols === false && numbers === false && lowerCase === false && upperCase === false){
       prompt("You must choose atleast one out of all");
       var symbols =prompt("Do you want any characters in your password?");
       var numbers = prompt("Do you want any numbers in your password")
-      var lowercase = prompt("Do you want any lowercase in your password?");
-      var uppercase = prompt("do you want any uppercase in your password?");
+      var lowerCase = prompt("Do you want any lowercase in your password?");
+      var upperCase = prompt("do you want any uppercase in your password?");
     }
-    
-    
+    var passwordCharacters = []
+
+    if (symbols){
+      passwordCharacters = passwordCharacters.concat(symbols)
     }
+    if (numbers){
+      passwordCharacters = passwordCharacters.concat(numbers)
+    }
+    if (lowerCase){
+      passwordCharacters = passwordCharacters.concat(lowerCase)
+    }
+    if(upperCase){
+      passwordCharacters = passwordCharacters.concat(upperCase)
+    }
+    var randomPassword = ""
+    for (var i =0; i < passwordLength; i==){
+      randomPassword =randomPassword + passwordCharacters[Math.floor(Math.random) * passwordCharacters.length];
+    }
+      return randomPassword;
+    }
+
+
+
 
 // Write password to the #password input
 function writePassword() {
