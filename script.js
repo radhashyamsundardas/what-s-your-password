@@ -1,9 +1,4 @@
-
-
-// Add event listener to generate button
- document.getElementById("generateBtn").addEventListener("click", writePassword); 
-
-// // Assignment Code
+ // Assignment Code
    var generateBtn = document.querySelector("#generate");
 
   var passwordLowerCase = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
@@ -26,10 +21,10 @@
          var passwordLength = (prompt("How many characters would you like to have in your password?"))
     }
 
-    var symbols =prompt("Do you want any symbols in your password?");
-    var numbers = prompt("Do you want any numbers in your password");
-    var lowerCase = prompt("Do you want any lowercase in your password?");
-    var upperCase = prompt("do you want any uppercase in your password?");
+    var symbols = confirm("Do you want any symbols in your password?");
+    var numbers = confirm("Do you want any numbers in your password");
+    var lowerCase = confirm("Do you want any lowercase in your password?");
+    var upperCase = confirm("do you want any uppercase in your password?");
 
     if (symbols === false && numbers === false && lowerCase === false && upperCase === false){
       prompt("You must choose atleast one out of all");
@@ -66,8 +61,10 @@
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
+
   passwordText.value = password;
+
 }
 
 // Add event listener to generate button
-document.getElementById("generateBtn").addEventListener("click", writePassword);  
+generateBtn.addEventListener("click", writePassword);
